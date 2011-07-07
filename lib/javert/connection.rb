@@ -10,8 +10,8 @@ module Javert
       @@connection = new_connection
     end
 
-		def connect(config)
+    def connect(config)
       Javert.connection = Net::LDAP.new(config)
-		end
+    end
 	end
 end
