@@ -57,13 +57,20 @@ module Javert
       # find(params={})
       def find(params={})
         return [] if params.empty?
-        paramsFilter = Net::LDAP::Filter.construct(to_ldap_query(params))
-        filter = @classFilter
-        filter = filter & paramsFilter unless params.empty?
+        
+		filter = @classFilter unless @classFilter.nil?
 
-        results = Javert.connection.search(:base => @base, :attributes => ldap_attributes, :filter => filter)
-        results.map do |ldap_entity|
-          e = self.new
+		if params.has_key?("dn") # This trumps all other filters
+			results = Javert.connection.search(:base => params["dn"], :attributes => ldap_attributes, :filter => filter)
+		else
+			paramsFilter = Net::LDAP::Filter.construct(to_ldap_query(params))
+			filter = filter & paramsFilter unless params.empty?
+
+			results = Javert.connection.search(:base => @base, :attributes => ldap_attributes, :filter => filter)
+		end
+		
+		results.map do |ldap_entity|
+          e = self.new # this doesn't feel "right"
           self.attribute_map.each_pair do |p, l|
             if multivalue_attributes.include?(p)
               # Multivalue
