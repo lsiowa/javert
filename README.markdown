@@ -60,3 +60,5 @@ TODO
 * Pull connection information into a common configuration file
 * Handle multi-value attributes (memberof, etc.)
 * Various other things I can't think of right now
+* Should this accept query parameter arrays?
+* Better handling of symbols vs strings for keys
