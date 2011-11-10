@@ -97,7 +97,7 @@ module Javert
         ldap_params = {}
         params.each_pair {|k,v| ldap_params[attribute_map[k.to_s].to_s] = v }
 
-        attributes = ldap_params.to_a.map {|e| "(#{e.join("=")})"}.to_s
+        attributes = ldap_params.to_a.map {|e| "(#{e.join('=')})"}.join
         "(&#{attributes})"
       end
 
