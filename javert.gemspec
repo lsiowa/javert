@@ -11,8 +11,8 @@ Gem::Specification.new do |s|
   s.platform        = Gem::Platform::RUBY
   s.files           = Dir.glob("{lib}/**/*")
   
-  # s.add_dependency 'activemodel', '~> 3.0'
-  # s.add_dependency 'activesupport', '~> 3.0'
-  # s.add_dependency 'net-ldap', '~> 0.2'
+  s.add_dependency 'activemodel', '~> 3.0'
+  s.add_dependency 'activesupport', '~> 3.0'
+  s.add_dependency 'net-ldap', '~> 0.2'
   
 end
