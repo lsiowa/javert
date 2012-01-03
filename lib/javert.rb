@@ -9,7 +9,6 @@ module Javert
   
   autoload :Connection, 'javert/connection'
   autoload :Entity, 'javert/entity'
-  autoload :Finder, 'javert/finder'
 
   extend Connection
 end
