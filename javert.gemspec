@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.description     = "A library to help you build models that hook to ldap"
   s.authors         = ["Carl Limyao"]
   s.require_path    = 'lib'
-  s.version         = '0.0.2'
+  s.version         = '0.0.3'
   s.platform        = Gem::Platform::RUBY
   s.files           = Dir.glob("{lib}/**/*")
   
