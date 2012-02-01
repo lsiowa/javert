@@ -18,7 +18,7 @@ module Javert
       conn.authenticate(config["username"], config["password"])
       conn.base = config["base"]
       
-      Javert.connect = conn
+      Javert.connection = conn
     end
 	end
 end
